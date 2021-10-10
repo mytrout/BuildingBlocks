@@ -1,0 +1,1035 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyTrout.BuildingBlocks.Core</name>
+    </assembly>
+    <members>
+        <member name="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException">
+            <summary>
+            Provides an <see cref="T:System.ArgumentException"/> for arguments that are whitespace.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the parameter name.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the parameter name and actual value.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="actualValue">the runtime value of the parameter.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the parameter name and message.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="message">the message in the exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the parameter name, actual value and message.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="actualValue">the runtime value of the parameter.</param>
+            <param name="message">the message in the exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the message and inner exception.
+            </summary>
+            <param name="message">the message in the exception.</param>
+            <param name="innerException">the <see cref="T:System.Exception"/> that caused this exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.Object,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the parameter name, actual value and the inner exception.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="actualValue">the runtime value of the parameter.</param>
+            <param name="innerException">the <see cref="T:System.Exception"/> that caused this exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the specified parameters.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="message">the message in the exception.</param>
+            <param name="innerException">the <see cref="T:System.Exception"/> that caused this exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.String,System.Object,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException"/> class with the specified parameters.
+            </summary>
+            <param name="paramName">name of the parameter.</param>
+            <param name="actualValue">the runtime value of the parameter.</param>
+            <param name="message">the message in the exception.</param>
+            <param name="innerException">the <see cref="T:System.Exception"/> that caused this exception.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException" /> class with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">An object that describes the source or destination of the serialized data.</param>
+            <remarks>
+            Because of the deprecation of <see cref="T:System.Runtime.Serialization.IFormatter" /> functionalities, this method will throw a <see cref="T:System.NotImplementedException"/>.
+            Because the ArgumentException stil requires this constructor, it must be implemented, but no additional work will be put into it.
+            </remarks>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.ArgumentWhiteSpaceException.ActualValue">
+            <summary>
+            Gets the actual value of the argument.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Extensions.DictionaryExtensions">
+            <summary>
+            Provides extensions to the <see cref="T:System.Collections.Generic.IDictionary`2" /> classes.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Extensions.DictionaryExtensions.ToDynamicObject(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Converts the <see cref="T:System.Collections.Generic.IDictionary`2" /> into a dynamic object.
+            </summary>
+            <param name="source">The dictionary to be converted.</param>
+            <returns>A dynamic object.</returns>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Extensions.ObjectExtensions">
+            <summary>
+            Provides extension methods to the <see cref="T:System.Object" /> class.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Extensions.ObjectExtensions.ToDictionary``1(``0)">
+            <summary>
+            Converts a <typeparamref name="T"/> object into a <see cref="T:System.Collections.Generic.Dictionary`2" />.
+            </summary>
+            <typeparam name="T">The type to be converted.</typeparam>
+            <param name="source">The instance to be converted. </param>
+            <returns>A dictionary containing the property values from <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Extensions.ObjectExtensions.ToDynamic``1(``0)">
+            <summary>
+            Converts a <paramref name="source"/> into a dynamic object.
+            </summary>
+            <typeparam name="T">A type to convert.</typeparam>
+            <param name="source">An instance of <typeparamref name="T"/> to be converted.</param>
+            <returns>A dynamic object.</returns>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Extensions.ObjectExtensions.ToDynamic``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Converts a <paramref name="source"/> into a dynamic object.
+            </summary>
+            <typeparam name="T">A type to convert.</typeparam>
+            <param name="source">An instance of <typeparamref name="T"/> to be converted.</param>
+            <param name="expandedProperties">Additional properties to add to the dynamic object.</param>
+            <returns>A dynamic object.</returns>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Extensions.StringExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Extensions.StringExtensions.ToCamelCase(System.String)">
+            <summary>
+            Converts an <paramref name="input"/> string to a camel cased version.
+            </summary>
+            <param name="input">string to be converted.</param>
+            <returns>A camel case string.</returns>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Application">
+            <summary>
+            Describes the application being created.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Application.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.Int32,System.Uri,System.Uri,System.Uri,System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Application" /> class with the specified values.
+            </summary>
+            <param name="applicationId">a unique identifier.</param>
+            <param name="name">a unique application name.</param>
+            <param name="companyName">the name of the application owner.</param>
+            <param name="companyShortName">the short name of the application owner.</param>
+            <param name="authors">a comma-delimited list of the authors who wrote this application.</param>
+            <param name="originalCopyrightYear">the initial year of the copyright.</param>
+            <param name="applicationUri">the Uri through which this application is accessed.</param>
+            <param name="licenseUri">the <see cref="T:System.Uri" /> to the software license.</param>
+            <param name="termsOfServiceUri">the <see cref="T:System.Uri" /> to the Terms of Service.</param>
+            <param name="privacyStatementUri">the <see cref="T:System.Uri" /> to the Privacy Statement.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.ApplicationId">
+            <summary>
+            Gets a unique identifier.
+            </summary>
+            <value>
+            a unique identifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.ApplicationUri">
+            <summary>
+            Gets the Uri through which this application is accessed.
+            </summary>
+            <value>
+            the Uri through which this application is accessed.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.Authors">
+            <summary>
+            Gets a comma-delimited list of the authors who wrote this application.
+            </summary>
+            <value>
+            a comma-delimited list of the authors who wrote this application.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.CompanyName">
+            <summary>
+            Gets the name of the application owner.
+            </summary>
+            <value>
+            the name of the application owner.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.CompanyShortName">
+            <summary>
+            Gets the short name of the application owner.
+            </summary>
+            <value>
+            the short name of the application owner.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.LicenseUri">
+            <summary>
+            Gets the <see cref="T:System.Uri" /> to the software license.
+            </summary>
+            <value>
+            the <see cref="T:System.Uri" /> to the software license.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.Name">
+            <summary>
+            Gets a unique application name.
+            </summary>
+            <value>
+            a unique application name.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.OriginalCopyrightYear">
+            <summary>
+            Gets the initial year of the copyright.
+            </summary>
+            <value>
+            the initial year of the copyright.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.PrivacyStatementUri">
+            <summary>
+            Gets the <see cref="T:System.Uri" /> to the Privacy Statement.
+            </summary>
+            <value>
+            the <see cref="T:System.Uri" /> to the Privacy Statement.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Application.TermsOfServiceUri">
+            <summary>
+            Gets the <see cref="T:System.Uri" /> to the Terms of Service.
+            </summary>
+            <value>
+            the <see cref="T:System.Uri" /> to the Terms of Service.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Concept">
+            <summary>
+            Represents a Concept within this system that is not currently defined as an <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity"/>, <see cref="T:MyTrout.BuildingBlocks.Core.Models.Lookup"/>, or represented by a .NET Type.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.Concept.Unknown">
+            <summary>
+            Represents an Unknown CoreType.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Concept.#ctor(System.Guid,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Concept" /> class with the specified values.
+            </summary>
+            <param name="id">a unique identifier.</param>
+            <param name="name">the name of the item.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Concept.ConceptId">
+            <summary>
+            Gets a unique identifier.
+            </summary>
+            <value>
+            a unique identifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Concept.Name">
+            <summary>
+            Gets the name of the item.
+            </summary>
+            <value>
+            the name of the item.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.CoreType">
+            <summary>
+            Represents a type within this system that can be derived from many different source (e.g. <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/>, <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup"/> or standard .NET Types).
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(MyTrout.BuildingBlocks.Core.Models.Concept)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is a concept.
+            </summary>
+            <param name="concept">The <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Concept"/> from which this type is derived.</param>        
+            <remarks>This constructor is used by internal process in the BuildingBlocks application.</remarks>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(MyTrout.BuildingBlocks.Core.Models.Entity)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is derived from an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/>.
+            </summary>
+            <param name="entity">The <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/> from which this type is derived.</param>
+            <remarks>This constructor is used by internal process in the BuildingBlocks application.</remarks>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(System.Guid,MyTrout.BuildingBlocks.Core.Models.Entity)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is derived from an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/>.
+            </summary>
+            <param name="arrayId">The unique identifier for an array of <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/>.</param>
+            <param name="entity">The <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/> from which this type is derived.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(MyTrout.BuildingBlocks.Core.Models.Lookup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is derived from an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup"/>.
+            </summary>
+            <param name="lookup">The <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup"/> from which this type is derived.</param>
+            <remarks>This constructor is used by internal process in the BuildingBlocks application.</remarks>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(System.Guid,MyTrout.BuildingBlocks.Core.Models.CoreType,MyTrout.BuildingBlocks.Core.Models.CoreType[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is a Generic Type.
+            </summary>
+            <param name="genericTypeId">The unique identifier for this custom Generic Type..</param>
+            <param name="genericType">The generic type.</param>
+            <param name="genericTypeParameters">The parameters for the Generic Type.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is derived from a regular .NET <see cref="T:System.Type"/>.
+            </summary>
+            <param name="internalType">The <see cref="T:System.Type"/> from which this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.#ctor(System.Guid,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> class that is derived from a regular .NET <see cref="T:System.Type"/>.
+            </summary>
+            <param name="internalType">The <see cref="T:System.Type"/> from which this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived.</param>
+            <param name="arrayGuid">The unique identifier for an array of <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity"/>.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MyTrout.BuildingBlocks.Core.Models.CoreType.Concept" -->
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity">
+            <summary>
+            Gets the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity" />.
+            </summary>
+            <value>
+            the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity" />.
+            </value>
+            <remarks>
+            This property is for internal BuildingBlocks application use only.
+            </remarks>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.GenericType">
+            <summary>
+            Gets the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing the Generic Type.
+            </summary>
+            <value>
+            the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing the Generic Type.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.GenericTypeParameters">
+            <summary>
+            Gets a list of <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> instances representing the parameters for the Generic Type.
+            </summary>
+            <value>a list of <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> instances representing the parameters for the Generic Type.</value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Id">
+            <summary>
+            Gets a unique identifier assigned to this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/>.
+            </summary>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.InternalType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> from which this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived.
+            </summary>
+            <value>
+            the <see cref="T:System.Type"/> from which this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsArray">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is an array.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is an array.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsConcept">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a Concept.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a Concept.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsEntity">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived from an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity" />.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is derived from an <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Entity" />.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsGeneric">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a generic type.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a generic type.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsLookup">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> is a <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup"/>.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> is a <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup"/>.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsPrimitive">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a primitive type.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a primitive type.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.IsValueType">
+            <summary>
+            Gets a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a value type.
+            </summary>
+            <value>
+            a value indicating whether this <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> is a value type.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup">
+            <summary>
+            Gets the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing a <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup" />.
+            </summary>
+            <value>
+            the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> representing a <see cref="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Lookup" />.
+            </value>
+            <remarks>
+            This property is for internal BuildingBlocks application use only.
+            </remarks>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Name">
+            <summary>
+            Gets a <see cref="T:System.String" /> representation of the name of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/>.
+            </summary>
+            <value>
+            a <see cref="T:System.String" /> representation of the name of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/>.
+            </value>
+            <exception cref="T:System.InvalidOperationException">Throw when the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> has not been converted from a self-reference <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> to the actual representation.</exception>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.CoreType.Namespace">
+            <summary>
+            Gets the primary namespace of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/>.
+            </summary>
+            <value>
+            the primary namespace of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/>.
+            </value>
+            <remarks>
+            This property currently does not reflect the full namespace list of generic parameters to a Generic Type.
+            </remarks>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.CoreType.ConvertToGenericTypeName">
+            <summary>
+            Converts a <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType"/> into a <see cref="T:System.String"/> representation of the Generic Type.
+            </summary>
+            <returns>a <see cref="T:System.String"/> representation of the Generic Type.</returns>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Entity">
+            <summary>
+            Describes a core class within the new application.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Entity.#ctor(System.Guid,System.String,System.String,MyTrout.BuildingBlocks.Core.Models.EntityModifiers,System.Int32,System.Int32,MyTrout.BuildingBlocks.Core.Models.CoreType,MyTrout.BuildingBlocks.Core.Models.Field[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> class with the specified values.
+            </summary>
+            <param name="entityId">a unique identifier.</param>
+            <param name="name">the name of the item.</param>
+            <param name="description">the description used by internal documentation.</param>
+            <param name="modifiers">modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> behavior.</param>
+            <param name="primaryPrimeNumberForHash">the prime number to initialize GetHashCode().</param>
+            <param name="secondaryPrimeNumberForHash">the prime number to use on each field in GetHashCode().</param>
+            <param name="baseCoreType">the Base CoreType for this Entity or <see langword="null" />.</param>
+            <param name="fields">fields of the item.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.BaseCoreType">
+            <summary>
+            Gets the Base CoreType for this Entity or <see langword="null" />.
+            </summary>
+            <value>
+            the Base CoreType for this Entity or <see langword="null" />.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.Description">
+            <summary>
+            Gets the description used by internal documentation.
+            </summary>
+            <value>
+            the description used by internal documentation.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.EntityId">
+            <summary>
+            Gets a unique identifier.
+            </summary>
+            <value>
+            a unique identifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.Fields">
+            <summary>
+            Gets fields of the item.
+            </summary>
+            <value>
+            fields of the item.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.Modifiers">
+            <summary>
+            Gets modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> behavior.
+            </summary>
+            <value>
+            modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> behavior.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.Name">
+            <summary>
+            Gets the name of the item.
+            </summary>
+            <value>
+            the name of the item.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.PrimaryPrimeNumberForHash">
+            <summary>
+            Gets the prime number to initialize GetHashCode().
+            </summary>
+            <value>
+            the prime number to initialize GetHashCode().
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Entity.SecondaryPrimeNumberForHash">
+            <summary>
+            Gets the prime number to use on each field in GetHashCode().
+            </summary>
+            <value>
+            the prime number to use on each field in GetHashCode().
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.EntityModifiers">
+            <summary>
+            Provides the metdata to alter Entity implementation.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.EntityModifiers.None">
+            <summary>
+            Indicates that an entity has no modifiers.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.EntityModifiers.Decoratee">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> can be decorated by another <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" />.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.EntityModifiers.Decorator">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> decorates another <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" />.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.EntityModifiers.Extensible">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> can be extended by the user via partial classes.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.EntityModifiers.Record">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Entity" /> must implement value semantics using the record keyword.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Field">
+            <summary>
+            Describes a core field within a class.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Field.#ctor(System.Guid,MyTrout.BuildingBlocks.Core.Models.CoreType,System.String,System.String,MyTrout.BuildingBlocks.Core.Models.FieldModifiers,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> class with the specified values.
+            </summary>
+            <param name="fieldId">a unique identifier.</param>
+            <param name="fieldType">a .NET Type.</param>
+            <param name="name">the name of the item.</param>
+            <param name="shortDescription">the description used by internal documentation.</param>
+            <param name="modifiers">modifiers that change field behavior.</param>
+            <param name="optionalValue">a default value for an optional field.</param>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Field.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> class.
+            </summary>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.FieldId">
+            <summary>
+            Gets a unique identifier.
+            </summary>
+            <value>
+            a unique identifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.FieldType">
+            <summary>
+            Gets a .NET Type.
+            </summary>
+            <value>
+            a .NET Type.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.Modifiers">
+            <summary>
+            Gets modifiers that change field behavior.
+            </summary>
+            <value>
+            modifiers that change field behavior.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.Name">
+            <summary>
+            Gets the name of the item.
+            </summary>
+            <value>
+            the name of the item.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.OptionalValue">
+            <summary>
+            Gets a default value for an optional field.
+            </summary>
+            <value>
+            a default value for an optional field.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Field.ShortDescription">
+            <summary>
+            Gets the description used by internal documentation.
+            </summary>
+            <value>
+            the description used by internal documentation.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.FieldModifiers">
+            <summary>
+            Provides the metadata to alter Field implementation.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.None">
+            <summary>
+            Indicates that a field has no modifiers.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Optional">
+            <summary>
+            Indicates that a field is optional.
+            </summary><remarks><para>Fields are required by default, thus the Optional flag is the exceptional case.
+            </para><para>If one <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> is marked with this modifier, no other fields for the Class can be marked with <see cref="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Params" />.
+            </para></remarks>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Params">
+            <summary>
+            Indicates that a field should use the params keyword in the constructor.
+            </summary><remarks><para>This modifier applies to <see cref="T:System.Array" />-typed fields.
+            </para><para>If one <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> is marked with this modifier, no other fields for the Class can be marked with <see cref="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Optional" />.
+            </para></remarks>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.AllowNull">
+            <summary>
+            Indicates that a field is allowed to be <see langword="null" />.
+            </summary><remarks><para>This modifier applies to <see cref="T:System.String" /> typed fields.
+            </para></remarks>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.AllowEmpty">
+            <summary>
+            Indicates that a field is allowed to be <see cref="F:System.Guid.Empty" /> or <see cref="F:System.String.Empty" />.
+            </summary><remarks><para>This modifier applies to <see cref="T:System.String" /> and <see cref="T:System.Guid" /> typed fields.
+            </para></remarks>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.AllowWhiteSpace">
+            <summary>
+            Indicates that a string field is allowed to contain only whitespace.
+            </summary><remarks><para>This modifier applies to <see cref="T:System.String" />-typed fields.
+            </para></remarks>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.AllowFieldOverride">
+            <summary>
+            Indicates that a field can be overridden.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Decorated">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> is the decorated see cref="Field" />.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.FieldModifiers.Key">
+            <summary>
+            Indicates that this <see cref="T:MyTrout.BuildingBlocks.Core.Models.Field" /> is a part of an identifying key for its parent.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Lookup">
+            <summary>
+            Describes a list of hard-coded lookup items.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Lookup.#ctor(System.Guid,System.String,System.String,MyTrout.BuildingBlocks.Core.Models.LookupModifiers,MyTrout.BuildingBlocks.Core.Models.LookupItem[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Lookup" /> class with the specified values.
+            </summary>
+            <param name="lookupId">a unique indentifier.</param>
+            <param name="name">the name of the item.</param>
+            <param name="description">the description used by internal documentation.</param>
+            <param name="modifiers">modifiers that can change Lookup behavior.</param>
+            <param name="items">entries in the hard-coded Lookup.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Lookup.Description">
+            <summary>
+            Gets the description used by internal documentation.
+            </summary>
+            <value>
+            the description used by internal documentation.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Lookup.Items">
+            <summary>
+            Gets entries in the hard-coded Lookup.
+            </summary>
+            <value>
+            entries in the hard-coded Lookup.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Lookup.LookupId">
+            <summary>
+            Gets a unique indentifier.
+            </summary>
+            <value>
+            a unique indentifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Lookup.Modifiers">
+            <summary>
+            Gets modifiers that can change Lookup behavior.
+            </summary>
+            <value>
+            modifiers that can change Lookup behavior.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Lookup.Name">
+            <summary>
+            Gets the name of the item.
+            </summary>
+            <value>
+            the name of the item.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.LookupItem">
+            <summary>
+            Describes a single Lookup entry.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.LookupItem.#ctor(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.LookupItem" /> class with the specified values.
+            </summary>
+            <param name="id">a unique indentifier.</param>
+            <param name="name">the name of the item.</param>
+            <param name="description">the description used by internal documentation.</param>
+            <param name="remarks">additional remarks used by internal documentation.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.LookupItem.Description">
+            <summary>
+            Gets the description used by internal documentation.
+            </summary>
+            <value>
+            the description used by internal documentation.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.LookupItem.Id">
+            <summary>
+            Gets a unique indentifier.
+            </summary>
+            <value>
+            a unique indentifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.LookupItem.Name">
+            <summary>
+            Gets the name of the item.
+            </summary>
+            <value>
+            the name of the item.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.LookupItem.Remarks">
+            <summary>
+            Gets additional remarks used by internal documentation.
+            </summary>
+            <value>
+            additional remarks used by internal documentation.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.LookupModifiers">
+            <summary>
+            Provides the metadata to alter Lookup implementation.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.LookupModifiers.None">
+            <summary>
+            Indicates that a Lookup has no modifiers.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.LookupModifiers.Flags">
+            <summary>
+            Indicates that Lookup items can be bitwise combined.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.Relationship">
+            <summary>
+            Represent a relationship between two <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> instances and their respective <see cref="P:MyTrout.BuildingBlocks.Core.Models.Relationship.Cardinality" /> and <see cref="P:MyTrout.BuildingBlocks.Core.Models.Relationship.Modality" />.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Models.Relationship.#ctor(System.Guid,MyTrout.BuildingBlocks.Core.Models.CoreType,MyTrout.BuildingBlocks.Core.Models.RelationshipModality,MyTrout.BuildingBlocks.Core.Models.RelationshipCardinality,MyTrout.BuildingBlocks.Core.Models.CoreType,MyTrout.BuildingBlocks.Core.Models.RelationshipModifiers)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Relationship" /> class with the specified values.
+            </summary>
+            <param name="relationshipId">a unique identifier.</param>
+            <param name="primaryType">the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the primary side.</param>
+            <param name="modality">a flag indicating optional or required.</param>
+            <param name="cardinality">the maximum number of items on the secondary side.</param>
+            <param name="secondaryCoreType">the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the secondary side.</param>
+            <param name="modifiers">modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Relationship" /> behavior.</param>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.Cardinality">
+            <summary>
+            Gets the maximum number of items on the secondary side.
+            </summary>
+            <value>
+            the maximum number of items on the secondary side.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.Modality">
+            <summary>
+            Gets a flag indicating optional or required.
+            </summary>
+            <value>
+            a flag indicating optional or required.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.Modifiers">
+            <summary>
+            Gets modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Relationship" /> behavior.
+            </summary>
+            <value>
+            modifiers that change <see cref="T:MyTrout.BuildingBlocks.Core.Models.Relationship" /> behavior.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.PrimaryType">
+            <summary>
+            Gets the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the primary side.
+            </summary>
+            <value>
+            the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the primary side.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.RelationshipId">
+            <summary>
+            Gets a unique identifier.
+            </summary>
+            <value>
+            a unique identifier.
+            </value>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Models.Relationship.SecondaryCoreType">
+            <summary>
+            Gets the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the secondary side.
+            </summary>
+            <value>
+            the <see cref="T:MyTrout.BuildingBlocks.Core.Models.CoreType" /> on the secondary side.
+            </value>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.RelationshipCardinality">
+            <summary>
+            Represents the maximum number of items on each side of the relationship.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipCardinality.OneToOne">
+            <summary>
+            For each item on one side of the relationship, there is only one item on the other side of the relationship.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipCardinality.OneToMany">
+            <summary>
+            For each item on one side of the relationship, there are many item on the other side of the relationship.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipCardinality.ManyToMany">
+            <summary>
+            For every item on one side of the relationship, there are many items on the other side of the relationship.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.RelationshipModality">
+            <summary>
+             Represents the minimum number of items on the secondary side of the <see cref="T:MyTrout.BuildingBlocks.Core.Models.Relationship" />.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipModality.Optional">
+            <summary>
+            Represents an optional relationship. (Modality is 0).
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipModality.Required">
+            <summary>
+            Represents a required relationship. (Modality is 1).
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Models.RelationshipModifiers">
+            <summary>
+            Provides the metadata to alter Lookup implementation.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipModifiers.None">
+            <summary>
+            Indicates that the Relationship has no modifiers.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipModifiers.EffectiveDateRequired">
+            <summary>
+            Requires an Effective Date for the Secondary side of the Relationship.
+            </summary>
+        </member>
+        <member name="F:MyTrout.BuildingBlocks.Core.Models.RelationshipModifiers.ExpirationDateRequired">
+            <summary>
+            Requires an Expiration Date for the Secondary side of the Relationship.
+            </summary>
+        </member>
+        <member name="T:MyTrout.BuildingBlocks.Core.Resources">
+            <summary>
+            The <see cref="T:MyTrout.BuildingBlocks.Core.Resources" /> class provides a wrapper around resource files that allows localized strings to be returned, as needed.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.#cctor">
+            <summary>
+            Initializes static properties of the <see cref="T:MyTrout.BuildingBlocks.Core.Resources" /> class.
+            </summary>
+        </member>
+        <member name="P:MyTrout.BuildingBlocks.Core.Resources.ResourceManager">
+            <summary>
+            Gets a singleton <see cref="T:System.Resources.ResourceManager" /> instance of the local resource manager.
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.CORETYPE_SELF_REFERENCE">
+            <summary>
+            Looks up a localized string like "A self-referencing CoreType must be converted to a Entity-referenced CoreType before use.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.CORETYPE_SELF_REFERENCE(System.Globalization.CultureInfo)">
+            <summary>
+            Looks up a localized string using a specific culture like "A self-referencing CoreType must be converted to a Entity-referenced CoreType before use.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.EXCEPTION_SERIALIZATION">
+            <summary>
+            Looks up a localized string like "Exception Serialization is no longer supported using the ISerializable interfaces.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.EXCEPTION_SERIALIZATION(System.Globalization.CultureInfo)">
+            <summary>
+            Looks up a localized string using a specific culture like "Exception Serialization is no longer supported using the ISerializable interfaces.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_NOT_NULL">
+            <summary>
+            Looks up a localized string like "{0} cannot contain any null parameters.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_NOT_NULL(System.Globalization.CultureInfo)">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} cannot contain any null parameters.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_NOT_NULL(System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} cannot contain any null parameters.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_NOT_NULL(System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} cannot contain any null parameters.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_ONE_ENTRY">
+            <summary>
+            Looks up a localized string like "{0} must contain at least one entry.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_ONE_ENTRY(System.Globalization.CultureInfo)">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain at least one entry.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_ONE_ENTRY(System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain at least one entry.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_ONE_ENTRY(System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain at least one entry.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_PARAMETERS_COUNT_MATCH">
+            <summary>
+            Looks up a localized string like "{0} must contain the same number of Generic parameters as {1}.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_PARAMETERS_COUNT_MATCH(System.Globalization.CultureInfo)">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain the same number of Generic parameters as {1}.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_PARAMETERS_COUNT_MATCH(System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain the same number of Generic parameters as {1}.".
+            </summary>
+        </member>
+        <member name="M:MyTrout.BuildingBlocks.Core.Resources.GENERIC_PARAMETERS_COUNT_MATCH(System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Looks up a localized string using a specific culture like "{0} must contain the same number of Generic parameters as {1}.".
+            </summary>
+        </member>
+    </members>
+</doc>

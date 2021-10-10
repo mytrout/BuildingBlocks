@@ -36,23 +36,14 @@ namespace MyTrout.BuildingBlocks.Core.Models
     public record CoreType
     {
         /// <summary>
-        /// Represents an Unknown CoreType.
-        /// </summary>
-        public static readonly CoreType Unknown = new CoreType(Guid.Empty, "Unknown");
-
-        private readonly string conceptName = null;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="CoreType"/> class that is a concept.
         /// </summary>
-        /// <param name="id">unique identifier for this concept.</param>
-        /// <param name="conceptName">The concept name.</param>
+        /// <param name="concept">The <see cref="Concept"/> from which this type is derived.</param>        
         /// <remarks>This constructor is used by internal process in the BuildingBlocks application.</remarks>
-        public CoreType(Guid id, string conceptName)
+        public CoreType(Concept concept)
         {
-            this.Id = id;
-            this.conceptName = conceptName ?? throw new ArgumentNullException(nameof(conceptName));
-            this.IsConcept = true;
+            this.Concept = concept ?? throw new ArgumentNullException(nameof(concept));
+            this.Id = this.Concept.ConceptId;
         }
 
         /// <summary>
@@ -64,7 +55,6 @@ namespace MyTrout.BuildingBlocks.Core.Models
         {
             this.Entity = entity ?? throw new ArgumentNullException(nameof(entity));
             this.Id = this.Entity.EntityId;
-            this.IsEntity = true;
         }
 
         /// <summary>
@@ -76,7 +66,6 @@ namespace MyTrout.BuildingBlocks.Core.Models
         {
             this.Id = arrayId;
             this.Entity = entity ?? throw new ArgumentNullException(nameof(entity));
-            this.IsEntity = true;
             this.IsArray = true;
         }
 
@@ -89,7 +78,6 @@ namespace MyTrout.BuildingBlocks.Core.Models
         {
             this.Lookup = lookup ?? throw new ArgumentNullException(nameof(lookup));
             this.Id = this.Lookup.LookupId;
-            this.IsLookup = true;
         }
 
         /// <summary>
@@ -119,7 +107,6 @@ namespace MyTrout.BuildingBlocks.Core.Models
 
             this.GenericTypeParameters = genericTypeParameters ?? throw new ArgumentNullException(nameof(genericTypeParameters));
             this.Id = genericTypeId;
-            this.IsGeneric = true;
         }
 
         /// <summary>
@@ -129,8 +116,6 @@ namespace MyTrout.BuildingBlocks.Core.Models
         public CoreType(Type internalType)
         {
             this.InternalType = internalType ?? throw new ArgumentNullException(nameof(internalType));
-            this.IsPrimitive = internalType.IsPrimitive;
-            this.IsValueType = this.InternalType.IsValueType;
             this.Id = internalType.GUID;
         }
 
@@ -142,11 +127,20 @@ namespace MyTrout.BuildingBlocks.Core.Models
         public CoreType(Guid arrayGuid, Type internalType)
         {
             this.InternalType = internalType ?? throw new ArgumentNullException(nameof(internalType));
-            this.IsPrimitive = internalType.IsPrimitive;
-            this.IsValueType = this.InternalType.IsValueType;
             this.IsArray = true;
             this.Id = arrayGuid;
         }
+
+        /// <summary>
+        /// Gets the <see cref="CoreType"/> representing an <see cref="Concept />.
+        /// </summary>
+        /// <value>
+        /// the <see cref="CoreType"/> representing an <see cref="Concept" />.
+        /// </value>
+        /// <remarks>
+        /// This property is for internal BuildingBlocks application use only.
+        /// </remarks>
+        public Concept Concept { get; init; }
 
         /// <summary>
         /// Gets the <see cref="CoreType"/> representing an <see cref="Entity" />.
@@ -157,7 +151,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <remarks>
         /// This property is for internal BuildingBlocks application use only.
         /// </remarks>
-        public Entity Entity { get; }
+        public Entity Entity { get; init; }
 
         /// <summary>
         /// Gets the <see cref="CoreType"/> representing the Generic Type.
@@ -165,13 +159,13 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// the <see cref="CoreType"/> representing the Generic Type.
         /// </value>
-        public CoreType GenericType { get; }
+        public CoreType GenericType { get; init; }
 
         /// <summary>
         /// Gets a list of <see cref="CoreType"/> instances representing the parameters for the Generic Type.
         /// </summary>
         /// <value>a list of <see cref="CoreType"/> instances representing the parameters for the Generic Type.</value>
-        public IEnumerable<CoreType> GenericTypeParameters { get; }
+        public IEnumerable<CoreType> GenericTypeParameters { get; init; }
 
         /// <summary>
         /// Gets a unique identifier assigned to this <see cref="CoreType"/>.
@@ -184,7 +178,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// the <see cref="Type"/> from which this <see cref="CoreType"/> is derived.
         /// </value>
-        public Type InternalType { get; private set; }
+        public Type InternalType { get; init; }
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is an array.
@@ -192,7 +186,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is an array.
         /// </value>
-        public bool IsArray { get; } = false;
+        public bool IsArray { get; init; } = false;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is a Concept.
@@ -200,7 +194,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is a Concept.
         /// </value>
-        public bool IsConcept { get; } = false;
+        public bool IsConcept => this.Concept is not null;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is derived from an <see cref="Entity" />.
@@ -208,7 +202,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is derived from an <see cref="Entity" />.
         /// </value>
-        public bool IsEntity { get; } = false;
+        public bool IsEntity => this.Entity is not null;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is a generic type.
@@ -216,7 +210,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is a generic type.
         /// </value>
-        public bool IsGeneric { get; } = false;
+        public bool IsGeneric => this.GenericType is not null;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType" /> is a <see cref="Lookup"/>.
@@ -224,7 +218,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType" /> is a <see cref="Lookup"/>.
         /// </value>
-        public bool IsLookup { get; } = false;
+        public bool IsLookup => this.Lookup is not null;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is a primitive type.
@@ -232,7 +226,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is a primitive type.
         /// </value>
-        public bool IsPrimitive { get; } = false;
+        public bool IsPrimitive => this.InternalType?.IsPrimitive ?? false;
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="CoreType"/> is a value type.
@@ -240,7 +234,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         /// <value>
         /// a value indicating whether this <see cref="CoreType"/> is a value type.
         /// </value>
-        public bool IsValueType { get; } = false;
+        public bool IsValueType => this.InternalType?.IsValueType ?? false;
 
         /// <summary>
         /// Gets the <see cref="CoreType"/> representing a <see cref="Lookup" />.
@@ -264,7 +258,7 @@ namespace MyTrout.BuildingBlocks.Core.Models
         {
             get
             {
-                string workingName = this.conceptName ?? this.Entity?.Name ?? this.InternalType?.Name ?? this.Lookup?.Name;
+                string workingName = this.Concept?.Name ?? this.Entity?.Name ?? this.InternalType?.Name ?? this.Lookup?.Name;
 
                 if (this.IsGeneric)
                 {

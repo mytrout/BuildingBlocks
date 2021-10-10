@@ -56,58 +56,14 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
         }
 
         [TestMethod]
-        public void Returns_Named_Unknown_CoreType_From_Concept_Constructor()
-        {
-            // arrange
-            string expectedName = "Unknown";
-
-            var entity = null as Entity;
-            var genericType = null as CoreType;
-            var genericTypeParameters = null as CoreType[];
-            var id = Guid.Empty;
-            var internalType = null as Type;
-            bool isArray = false;
-            bool isConcept = true;
-            bool isEntity = false;
-            bool isGeneric = false;
-            bool isLookup = false;
-            bool isPrimitive = false;
-            bool isValueType = false;
-            var lookup = null as Lookup;
-            string name = expectedName;
-            var @namespace = string.Empty;
-
-            // act
-            var result = CoreType.Unknown;
-
-            // assert
-            Assert.AreEqual(entity, result.Entity);
-            Assert.AreEqual(genericType, result.GenericType);
-            Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
-            Assert.AreEqual(id, result.Id);
-            Assert.AreEqual(internalType, result.InternalType);
-            Assert.AreEqual(isArray, result.IsArray);
-            Assert.AreEqual(isConcept, result.IsConcept);
-            Assert.AreEqual(isEntity, result.IsEntity);
-            Assert.AreEqual(isGeneric, result.IsGeneric);
-            Assert.AreEqual(isLookup, result.IsLookup);
-            Assert.AreEqual(isPrimitive, result.IsPrimitive);
-            Assert.AreEqual(isValueType, result.IsValueType);
-            Assert.AreEqual(lookup, result.Lookup);
-            Assert.AreEqual(name, result.Name);
-            Assert.AreEqual(@namespace, result.Namespace);
-        }
-
-        [TestMethod]
         public void Returns_Valid_CoreType_From_Concept_Constructor()
         {
             // arrange
-            string expectedName = "ConceptName";
-
+            var concept = new Concept(Guid.NewGuid(), "conceptName");
             var entity = null as Entity;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
-            var id = Guid.NewGuid();
+            var id = concept.ConceptId;
             var internalType = null as Type;
             bool isArray = false;
             bool isConcept = true;
@@ -117,13 +73,14 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             bool isPrimitive = false;
             bool isValueType = false;
             var lookup = null as Lookup;
-            string name = expectedName;
+            string name = concept.Name;
             var @namespace = string.Empty;
 
             // act
-            var result = new CoreType(id, expectedName);
+            var result = new CoreType(concept);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -162,6 +119,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
                                         FieldModifiers.None,
                                         null));
 
+            var concept = null as Concept;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
             var id = entity.EntityId;
@@ -181,6 +139,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(entity);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -219,6 +178,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
                                         FieldModifiers.None,
                                         null));
 
+            var concept = null as Concept;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
             var id = entity.EntityId;
@@ -238,6 +198,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(id, entity);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -259,6 +220,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
         public void Returns_Valid_CoreType_From_GenericType_Constructor()
         {
             // arrange
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = new CoreType(typeof(List<>));
             var genericTypeParameters = new CoreType[1] { new CoreType(typeof(string)) };
@@ -279,6 +241,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(id, genericType, genericTypeParameters);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -300,6 +263,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
         public void Returns_Valid_CoreType_From_GenericType_Constructor_With_Multiple_Generic_Parameters()
         {
             // arrange
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = new CoreType(typeof(Dictionary<,>));
             var genericTypeParameters = new CoreType[2] { new CoreType(typeof(string)), new CoreType(typeof(string)) };
@@ -320,6 +284,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(id, genericType, genericTypeParameters);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -343,6 +308,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             // arrange
             var internalType = typeof(Application);
 
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
@@ -362,6 +328,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(internalType);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -385,6 +352,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             // arrange
             var internalType = typeof(int);
 
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
@@ -404,6 +372,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(internalType);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -427,6 +396,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             // arrange
             var internalType = typeof(Application);
 
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
@@ -446,6 +416,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(id, internalType);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -474,6 +445,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
                                     LookupModifiers.Flags,
                                     new LookupItem(1, "Item Name 1", "Description 1"));
 
+            var concept = null as Concept;
             var entity = null as Entity;
             var genericType = null as CoreType;
             var genericTypeParameters = null as CoreType[];
@@ -493,6 +465,7 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
             var result = new CoreType(lookup);
 
             // assert
+            Assert.AreEqual(concept, result.Concept);
             Assert.AreEqual(entity, result.Entity);
             Assert.AreEqual(genericType, result.GenericType);
             Assert.AreEqual(genericTypeParameters, result.GenericTypeParameters);
@@ -511,15 +484,14 @@ namespace MyTrout.BuildingBlocks.Core.Models.Tests
         }
 
         [TestMethod]
-        public void Throws_ArgumentNullException_From_Concept_Constructor_When_ConceptName_Is_Null()
+        public void Throws_ArgumentNullException_From_Concept_Constructor_When_Concept_Is_Null()
         {
             // arrange
-            var id = Guid.NewGuid();
-            var conceptName = null as string;
-            var expectedParamName = nameof(conceptName);
+            var concept = null as Concept;
+            var expectedParamName = nameof(concept);
 
             // act
-            var result = Assert.ThrowsException<ArgumentNullException>(() => new CoreType(id, conceptName));
+            var result = Assert.ThrowsException<ArgumentNullException>(() => new CoreType(concept));
 
             // assert
             Assert.AreEqual(expectedParamName, result.ParamName);

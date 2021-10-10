@@ -25,8 +25,8 @@
 
 namespace MyTrout.BuildingBlocks.Core.Models.Tests
 {
-    using MyTrout.BuildingBlocks.Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using MyTrout.BuildingBlocks.Core;
     using System;
 
     /// <summary>
